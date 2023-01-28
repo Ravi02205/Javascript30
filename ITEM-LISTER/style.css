@@ -1,0 +1,13 @@
+.delete{
+    float: right;
+}
+
+.inputText{
+    width: 50%;
+    display: inline-block;
+    margin-right: 10px;
+}
+
+.submitButton{
+    margin-top: -5px;
+}
