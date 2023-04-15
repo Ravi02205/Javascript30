@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Console Tricks!</title>
+</head>
+
+<body>
+
+    <p onClick="makeGreen()">×BREAK×DOWN×</p>
+
+    <script>
+        const dogs = [{ name: 'Snickers', age: 2 }, { name: 'hugo', age: 8 }];
+
+        function makeGreen() {
+            const p = document.querySelector('p');
+            p.style.color = '#BADA55';
+            p.style.fontSize = '50px';
+        }
+
+    // Regular
+    console.log("hello");
+    
+    // Interpolated
+    console.log("this is %s",'@');
+    console.log("this is %d",1);
+    
+    // Styled
+    console.log("%c IVY",'font-size:40px;text-shadow:5px 5px #ff0000;color:green;border:1px solid red');
+
+    // warning!
+    console.warn('oh no !!!!');
+    
+    // Error :|
+    console.error('That is shit');
+
+    // Info
+    console.info('hello !');
+
+    // Testing
+
+    var p=document.querySelector('p');
+
+    console.assert(p.classList.contains('ouch'),"that is not right !");
+
+    // clearing
+    // console.clear();
+
+    // Viewing DOM Elements
+    var p=document.querySelector('p');
+
+    console.log(p);
+    console.dir(p);
+
+    // Grouping together
+    dogs.forEach(dog => {
+        console.group(dog.name);
+        console.log(dog.name);
+        console.log(dog.age);
+        console.groupEnd(dog.name);
+    });
+
+    // counting
+    console.count('hello');
+    console.count('hello1');
+    console.count('hello1');
+    console.count('hello');
+    console.count('hello');
+    console.count('hello1');
+    console.count('hello');
+    console.count('hello1');
+    console.count('hello');
+    console.count('hello1');
+    console.count('hello1');
+    console.count('hello1');
+    
+    // timing
+    console.time('hello');
+    fetch('https://api.github.com/repos/javascript-tutorial/en.javascript.info/commits').then(data=>data.json()).then((data)=>{console.timeEnd('hello');console.log(data);})
+
+    </script>
+</body>
+
+</html>
